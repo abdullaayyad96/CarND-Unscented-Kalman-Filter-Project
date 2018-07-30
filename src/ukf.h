@@ -10,6 +10,8 @@
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
+#define PI 3.14159265
+
 class UKF {
 public:
 
@@ -66,6 +68,14 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+
+  ///* NIS values for radar and laser measurments
+  double NIS_radar;
+  double NIS_laser;
+
+  ///* files to store NIS values
+  std::ofstream NIS_radar_f;
+  std::ofstream NIS_laser_f;
 
 
   /**
